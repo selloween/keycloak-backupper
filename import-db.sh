@@ -2,7 +2,7 @@
 
 source .env
 
-NEWEST_DUMP=$(find /srv/keycloak/db-backups -type f -exec stat -c '%X %n' {} \; -name "*.sql" | sort
+NEWEST_DUMP=$(find ${BACKUP_DIR} -type f -exec stat -c '%X %n' {} \; -name "*.sql" | sort
     -nr | awk 'NR==1 {print $2}')
 
 
